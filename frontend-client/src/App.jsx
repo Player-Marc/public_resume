@@ -32,7 +32,8 @@ const App = () => {
   const TILE_SIZE = 32;
   const SNOWBALL_RADIUS = 5;
 
-  const socket = io.connect("http://localhost:3000");
+  // const socket = io.connect("http://localhost:3000");
+  const socket = io.connect("https://tresum.onrender.com");
 
   socket.on("map", (loadedMap) => {
     groundMap = loadedMap.ground;
