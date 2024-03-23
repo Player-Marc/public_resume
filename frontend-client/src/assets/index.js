@@ -26,9 +26,12 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import personBG from "./personBG.png"
+import personBG2 from "./personBG2.png"
+
+import techSkillPerson from "./tech_skills_art.png"
+
+import expBldg from "./exp_bldg.png"
 
 export {
   logo,
@@ -56,7 +59,8 @@ export {
   shopify,
   starbucks,
   tesla,
-  carrent,
-  jobit,
-  tripguide,
+  personBG,
+  personBG2,
+  techSkillPerson,
+  expBldg
 };

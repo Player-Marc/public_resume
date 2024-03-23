@@ -15,13 +15,6 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
 } from "../assets";
 
@@ -31,33 +24,196 @@ export const navLinks = [
     title: "About",
   },
   {
-    id: "work",
-    title: "Work",
+    id: "skills",
+    title: "Tech",
   },
   {
-    id: "contact",
-    title: "Contact",
+    id: "buffs",
+    title: "Exp",
   },
 ];
 
-const services = [
+const techSkillsPrimary = [
   {
-    title: "Web Developer",
-    icon: web,
+    type: "skill",
+    title: "Javascript",
+    details: "Dash and Propel towards a target location",
+    // icon: "web",
+  }, {
+    type: "skill",
+    title: "Java",
+    details: "Dash and Propel towards a target location",
+    // icon: "web",
+  }, {
+    type: "skill",
+    title: "Adobe Photoshop",
+    details: "Dash and Propel towards a target location",
+    // icon: "mobile",
   },
   {
-    title: "React Native Developer",
-    icon: mobile,
+    type: "skill",
+    title: "React",
+    details: "Dash and Propel towards a target location",
+    // icon: "mobile",
   },
   {
-    title: "Backend Developer",
-    icon: backend,
+    type: "skill",
+    title: "HTML",
+    details: "Dash and Propel towards a target location",
+    // icon: "mobile",
   },
   {
-    title: "Content Creator",
-    icon: creator,
+    type: "skill",
+    title: "CSS",
+    details: "Dash and Propel towards a target location",
+    // icon: "mobile",
   },
-];
+  {
+    type: "skill",
+    title: "Angular",
+    details: "Dash and Propel towards a target location",
+    // icon: "mobile",
+  },
+  {
+    type: "Android Studio",
+    title: "Unity",
+    details: "Dash and Propel towards a target location",
+    // icon: "mobile",
+  },
+  {
+    type: "skill",
+    title: "Git",
+    details: "Dash and Propel towards a target location",
+    // icon: "mobile",
+  },
+  {
+    type: "skill",
+    title: "REST API",
+    details: "Dash and Propel towards a target location",
+    // icon: "mobile",
+  },
+  {
+    type: "skill",
+    title: "Adobe Illustrator",
+    details: "Dash and Propel towards a target location",
+    // icon: "mobile",
+  },
+  {
+    type: "skill",
+    title: "Spring Boot",
+    details: "Dash and Propel towards a target location",
+    // icon: "mobile",
+  }];
+
+const techSkillsOther = [
+  {
+    type: "skill",
+    title: "Node",
+    details: "Dash and Propel towards a target location",
+    // icon: "web",
+  },
+  {
+    type: "skill",
+    title: "NextJS",
+    details: "Dash and Propel towards a target location",
+    // icon: "web",
+  },
+  {
+    type: "skill",
+    title: "Agile",
+    details: "Dash and Propel towards a target location",
+    // icon: "web",
+  },
+  {
+    type: "skill",
+    title: "Express",
+    details: "Dash and Propel towards a target location",
+    // icon: "web",
+  },
+  {
+    type: "skill",
+    title: "Framer Motion",
+    details: "Dash and Propel towards a target location",
+    // icon: "web",
+  },
+  {
+    type: "skill",
+    title: "ThreeJS",
+    details: "Dash and Propel towards a target location",
+    // icon: "web",
+  },
+]
+
+const testSkills = [
+  {
+    type: "skill",
+    title: "Javascript",
+    details: "Dash and Propel towards a target location",
+    // icon: "web",
+  }, {
+    type: "skill",
+    title: "Java",
+    details: "Dash and Propel towards a target location",
+    // icon: "web",
+  }, {
+    type: "skill",
+    title: "Adobe Photoshop",
+    details: "Dash and Propel towards a target location",
+    // icon: "mobile",
+  },
+  {
+    type: "skill",
+    title: "React",
+    details: "Dash and Propel towards a target location",
+    // icon: "mobile",
+  }];
+
+const testBuffs = [{
+  type: "buff",
+  title: "Programmer Analyst",
+  company: "Vertere",
+  details: "U go mor vrroom vroommm",
+  segments: [
+    "Design systems or applications based on Client requirements and develop these programs based on design and requirements specifications",
+    "Debug, test APIs and end points, then conduct review of technical work outputs",
+    "Assisted fellow peers on their coding tasks. As well as participated daily in Client and Internal scrum meetings",
+    "Held discussions with Client to have a clearer understing and insight for the project requirements to set expectations and reduce errors"
+  ]
+  // icon: "web",
+}, {
+  type: "buff",
+  title: "Technology Consultant",
+  company: "DXC",
+  details: "U go mor vrroom vroommm",
+  segments: [
+    "Developed apps from scratch and concept based on user requirements, these were created into functional prototypes and templates from wireframe and mock-ups. Also joined in Design Thinking Trainings",
+    "Experienced Full Stack App Development with the help of Android SDK and connected applications to back-end services with RESTful Web Services",
+    "Delivered front-end development tasks using Angular, HTML and CSS",
+    "Developed apps (Web and Native) optimized for any resolution of desktop and mobile devices. Collaborated closely with the QA for bug fixes/issues for Rapid Development, and the product owner and designer to achieve better UI/UX while in an Agile environment with the help of tools such as JIRA and GIT Version Control",
+  ]
+  // icon: "web",
+}, {
+  type: "buff",
+  title: "Application Systems Developer",
+  company: "Fujitsu",
+  details: "U go mor vrroom vroommm",
+  segments: [
+    "Develop as well as create test specifications and execute testing, Bug fixing, Enhancements, and Handling Change Requests",
+    "Contributed ideas and suggestions in team meetings and delivered updates on deadlines, designs and improvements",
+    "Coded while helping fellow developers by maintaining readable, testable, and scalable source code that adheres to clean code principles and best practices"
+  ]
+  // icon: "mobile",
+},
+{
+  type: "buff",
+  title: "Quality Assurance Specialist",
+  company: "Smart Communications",
+  details: "U go mor vrroom vroommm",
+  segments: [
+    "Worked alongside Developers to report bug findings. Created complete and proper documentations of testing with test scripts, cases, and validate data using MS SQL"
+  ]
+  // icon: "mobile",
+}]
 
 const technologies = [
   {
@@ -114,60 +270,55 @@ const technologies = [
   },
 ];
 
-const experiences = [
-  {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-];
+const experiences = [{
+  title: "Programmer Analyst",
+  date: "June 2022 - June 2022",
+  company: "Vertere",
+  details: "U go mor vrroom vroommm",
+  segments: [
+    "Design systems or applications based on Client requirements and develop these programs based on design and requirements specifications",
+    "Debug, test APIs and end points, then conduct review of technical work outputs",
+    "Assisted fellow peers on their coding tasks. As well as participated daily in Client and Internal scrum meetings",
+    "Held discussions with Client to have a clearer understing and insight for the project requirements to set expectations and reduce errors"
+  ],
+  icon: web,
+  iconBg: "#E6DEDD",
+}, {
+  title: "Technology Consultant",
+  date: "June 2022 - June 2022",
+  company: "DXC",
+  details: "U go mor vrroom vroommm",
+  segments: [
+    "Developed apps from scratch and concept based on user requirements, these were created into functional prototypes and templates from wireframe and mock-ups. Also joined in Design Thinking Trainings",
+    "Experienced Full Stack App Development with the help of Android SDK and connected applications to back-end services with RESTful Web Services",
+    "Delivered front-end development tasks using Angular, HTML and CSS",
+    "Developed apps (Web and Native) optimized for any resolution of desktop and mobile devices. Collaborated closely with the QA for bug fixes/issues for Rapid Development, and the product owner and designer to achieve better UI/UX while in an Agile environment with the help of tools such as JIRA and GIT Version Control",
+  ],
+  icon: web,
+  iconBg: "#E6DEDD",
+}, {
+  title: "Application Systems Developer",
+  date: "June 2022 - June 2022",
+  company: "Fujitsu",
+  details: "U go mor vrroom vroommm",
+  segments: [
+    "Develop as well as create test specifications and execute testing, Bug fixing, Enhancements, and Handling Change Requests",
+    "Contributed ideas and suggestions in team meetings and delivered updates on deadlines, designs and improvements",
+    "Coded while helping fellow developers by maintaining readable, testable, and scalable source code that adheres to clean code principles and best practices"
+  ],
+  icon: mobile,
+  iconBg: "#E6DEDD",
+}, {
+  title: "Quality Assurance Specialist",
+  date: "June 2022 - June 2022",
+  company: "Smart Communications",
+  details: "U go mor vrroom vroommm",
+  segments: [
+    "Worked alongside Developers to report bug findings. Created complete and proper documentations of testing with test scripts, cases, and validate data using MS SQL"
+  ],
+  icon: mobile,
+  iconBg: "#E6DEDD",
+}];
 
 const testimonials = [
   {
@@ -196,70 +347,5 @@ const testimonials = [
   },
 ];
 
-const projects = [
-  {
-    name: "Car Rent",
-    description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
-  },
-];
 
-export { services, technologies, experiences, testimonials, projects };
+export { techSkillsPrimary, techSkillsOther, testBuffs, testSkills, technologies, experiences, testimonials };

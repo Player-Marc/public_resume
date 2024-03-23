@@ -11,7 +11,7 @@ class Snowball {
 
   update(snowballs, players, delta) {
     
-
+    
     for (const snowball of this.alive(snowballs)) {
       
 

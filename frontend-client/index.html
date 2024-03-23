@@ -3,13 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
   </head>
-  <body>
-    <canvas id="canvas"></canvas>
+  <body>    
     <div id="root"></div>
     
+    <canvas class="fixed" id="canvas"></canvas>
+    <canvas class="relative touch-area" id="clickArea"></canvas>
+    
+    <canvas class="fixed" id="canvasTEST"></canvas>
+
     <script type="module" src="/src/main.jsx"></script>
+
   </body>
 </html>

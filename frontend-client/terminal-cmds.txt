@@ -1,1 +1,19 @@
+
+
+npm create vite@latest ./ -- --template react
+
+npm install -D tailwindcss
+
+npx tailwindcss init
+
 npm i socket.io-client
+
+npm i gsap
+
+////
+
+backend on render
+backend now on FL0
+netlify for frontend deployment
+
+the project frontend is using vite

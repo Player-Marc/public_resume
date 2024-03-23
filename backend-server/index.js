@@ -79,7 +79,7 @@ const skill = new Skill();
 const enemy = new Enemy();
 const skillDeckSystem = new SkillDeckSystem();
 
-const enemiesNumber = 8;
+const enemiesInitialSpawnNumber = 4;
 
 
 
@@ -172,39 +172,7 @@ async function main() {
       skillsSelection: playerStartingDeckSkill
     });
 
-    for (var i = 0; i < enemiesNumber; i++) {
-      enemies.push({
-        id: socket.id + i,
-        type: "enemy",
-        activated: false,
-        health: 20,
-        perishing: 3000,
-        dead: false,
-        shield: 0,
-        aggroRange: 150,
-        exp: 0,
-        yieldDestroyEXP: 3,
-        yieldHitEXP: 5,
-        yieldChargeDmg: 5,
-        yieldchargeDebuff: 5,
-        class: ["Ghoul", "Mystic"],
-        attack: 10,
-        speed: 0,
-        size: 15,
-        rune: ["Sigma", "Alpha"],
-        affinity: ["Wind"],
-        aggroRadius: 5,
-        x: Math.floor(Math.random() * 400),
-        y: Math.floor(Math.random() * 400),
-        snowballStats: {
-          ready: 0,
-          rate: 900,
-          rateCooldown: 0,
-          speed: 1.5
-        }
-
-      });
-    }
+    
 
     buff.applyStartingBuffs(players);
 
@@ -217,6 +185,42 @@ async function main() {
       buff, skills, clicksMap, snowballs, io);
 
   });
+
+
+  for (var i = 0; i < enemiesInitialSpawnNumber; i++) {
+    enemies.push({
+      id: "enemy" + i,
+      type: "enemy",
+      activated: false,
+      health: 20,
+      perishing: 3000,
+      dead: false,
+      shield: 0,
+      aggroRange: 150,
+      exp: 0,
+      yieldDestroyEXP: 3,
+      yieldHitEXP: 1,
+      yieldChargeDmg: 5,
+      yieldchargeDebuff: 5,
+      class: ["Ghoul", "Mystic"],
+      attack: 10,
+      speed: 0,
+      size: 15,
+      rune: ["Sigma", "Alpha"],
+      affinity: ["Wind"],
+      aggroRadius: 5,
+      x: Math.floor(Math.random() * 400),
+      y: Math.floor(Math.random() * 400),
+      snowballStats: {
+        ready: 0,
+        rate: 900,
+        rateCooldown: 0,
+        speed: 1.5
+      }
+
+    });
+  }
+
 
   // calculate how much time has passed
   let lastUpdate = Date.now();
