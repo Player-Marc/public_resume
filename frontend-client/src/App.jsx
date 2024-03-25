@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { About, Contact, Experience, Works, Feedbacks, Hero, Navbar, UpgradesBar, ContestBar, Tech, StarsCanvas, AnalogStick } from "./components";
+import { Experience, Hero, Navbar, UpgradesBar, ContestBar, Tech, AnalogStick, Dialogues } from "./components";
 
 import React from "react";
 
@@ -165,7 +165,7 @@ water = new Water(
 water.rotation.x = - Math.PI / 2;
 
 ////> comment this out while testing to save GPU
-// scene.add(water);
+scene.add(water);
 
 // // Skybox
 
@@ -314,6 +314,7 @@ const App = () => {
 
   /////
 
+  window.removeEventListener( 'resize', onWindowResize );
   window.addEventListener( 'resize', onWindowResize );
 
 
@@ -368,6 +369,7 @@ const App = () => {
           <AnalogStick />
           <UpgradesBar />
           <ContestBar />
+          <Dialogues />
         </div>
 
         {/* scroll by page draft, trying to imitate crossfade website */}

@@ -311,8 +311,9 @@ const AnalogStick = () => {
         {/* style to put inside 'pressed' to show circle outline behind the analog stick */}
         {/* -> fixed sm:left-[6%] sm:bottom-[11%] lg:left-[6.5%] lg:bottom-[19%]  */}
 
+        {/* analog stick touch/drag area */}
         <div onTouchMove={touchMove} onMouseMove={mouseMove} onTouchEnd={mouseUp} onMouseUp={mouseUp} onTouchCancel={mouseLeave} onMouseLeave={mouseLeave} className={`z-40 duration-300 
-        ${scrolled ? "duration-700  bg-white h-[150px] relative w-[100vw] rounded-none" : " "}
+        ${scrolled ? "duration-700  bg-white h-[150px] relative w-full rounded-none" : " "}
         ${pressed ? "rounded-full  border-2 border-dashed fixed h-[300px] w-[300px] -left-[40px] -bottom-[40px] lg:h-[48rem] lg:w-[48rem] lg:-left-[150px] lg:-bottom-[80px]"
             : "fixed sm:left-[6%] rounded-full border-dashed sm:w-[8rem] sm:h-[8rem] lg:w-[16rem] lg:h-[16rem] border-2"}
         `}>
@@ -322,8 +323,12 @@ const AnalogStick = () => {
 
           {/* <button className={`duration-700 ${scrolled ? "fixed bg-[#666666] m-[180px]" : "inset-0 fixed top-[50%] right-0 bg-[#666666] w-[150px] h-[150px] m-[180px]"}`}  ></button> */}
 
-          <motion.button onTouchStart={mouseDown} onMouseDown={mouseDown} style={{ x, y }} className={`${scrolled ? "hidden" : "inset-0 fixed  bg-white sm:w-[4rem] sm:h-[4rem] lg:w-[8rem] lg:h-[8rem] analogStick"}`} ref={refAnalogStick}>
+          {/* main analog stick button */}
+          <motion.button ref={refAnalogStick} onTouchStart={mouseDown} onMouseDown={mouseDown} style={{ x, y }} className={`
+          ${scrolled ? "hidden" : "inset-0 fixed  bg-white sm:w-[4rem] sm:h-[4rem] lg:w-[8rem] lg:h-[8rem] analogStick"}`}>
+
             <motion.div id="analogStick" className="bg-white sm:w-[4rem] sm:h-[4rem] lg:w-[8rem] lg:h-[8rem] rotate-45"></motion.div>
+
           </motion.button>
           {/* </div> */}
 

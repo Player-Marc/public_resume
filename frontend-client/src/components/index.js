@@ -10,6 +10,7 @@ import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import AnalogStick from './AnalogStick';
 import ContestBar from './ContestBar';
+import Dialogues from './Dialogues';
 
 export {
   Hero,
@@ -26,5 +27,6 @@ export {
   BallCanvas, 
   ComputersCanvas, 
   StarsCanvas,
-  ContestBar
+  ContestBar,
+  Dialogues
 }
