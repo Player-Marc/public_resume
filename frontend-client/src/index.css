@@ -374,6 +374,8 @@ canvas {
   transparent 97%);
   background-size: 70px 180px;
   /* background-repeat: no-repeat; */
+
+  animation: animate-bg 10s linear infinite;
 }
 
 .animate-lines {
@@ -392,7 +394,7 @@ canvas {
   background-size: 70px 180px;
   /* background-repeat: no-repeat; */
 
-  animation: animate 10s linear infinite;
+  animation: animate-bg 10s linear infinite;
 
 }
 

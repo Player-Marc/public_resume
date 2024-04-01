@@ -9,11 +9,16 @@ import { socket } from "../SocketReceiver"
 
 import { testBuffs } from "../constants";
 
+import { useSelector, useDispatch } from 'react-redux';
+import { setDialogueStep, setPopupPanelsActive } from '../redux/manageDialogues.js';
+
 
 let upgradesRemainingBuffs = [];
 
 
 export const SelectorBuffs = (show) => {
+
+  const dispatch = useDispatch();
 
   const [expandSkill, setExpandSkill] = useState("");
   const [toggle, setToggle] = useState(false);
@@ -28,6 +33,8 @@ export const SelectorBuffs = (show) => {
   useEffect(() => {
 
     if (upgradeDeckBuffs.length > 0 && show.display === "buffs") {
+
+      dispatch(setPopupPanelsActive(true))
 
       console.log("showing upgrade selection panel for buffs");
 
@@ -52,8 +59,8 @@ export const SelectorBuffs = (show) => {
 
     console.log("Upgrade for player: " + upgradesAvailable[0].playerId);
 
-    if(upgradesAvailable[0].playerId !== socket.id) return;
-    
+    if (upgradesAvailable[0].playerId !== socket.id) return;
+
     console.log("[] Second Upgrade Recieved: " + upgradesAvailable[1].title);
 
     if (upgradesAvailable[0].type === "buff") {
@@ -81,6 +88,7 @@ export const SelectorBuffs = (show) => {
   // window.removeEventListener("keydown", (e)=>{} )
 
   useEffect(() => {
+
     const handleScroll = (e) => {
       if (e.key === "0") {
         if (e.repeat) return;
@@ -101,9 +109,9 @@ export const SelectorBuffs = (show) => {
 
   return (
 
-    <div className={`z-60 ${toggle ? "w-screen" : "hidden"} `}>
+    <div className={`${toggle ? "w-screen" : "hidden"} `}>
 
-      <div className={`${toggle === "buffs" ? "fixed inset-0 flex justify-center items-center w-screen -top-[40px]" : "hidden"} `}>
+      <div className={`z-40 ${toggle === "buffs" ? "fixed inset-0 flex justify-center items-center w-screen -top-[40px]" : "hidden"} `}>
 
         <div
           className=' backdrop-blur-sm bg-[#B6FFE4]/60  
@@ -160,6 +168,7 @@ export const SelectorBuffs = (show) => {
               <div className="p-4 bg-[#777777]"></div>
               <div className="p-4 bg-[#222222]"></div> */}
 
+              {/* category description selectors */}
               <div className={`${"-mt-[1px] flex justify-center gap-3"} `}>
 
                 <button
@@ -170,7 +179,7 @@ export const SelectorBuffs = (show) => {
 
                   }}
                 >
-                <div className="-mx-6 lg:rotate-90 flex justify-center">LENGTH</div>
+                  <div className="-mx-6 lg:rotate-90 flex justify-center">LENGTH</div>
                 </button>
 
 
@@ -182,7 +191,7 @@ export const SelectorBuffs = (show) => {
 
                   }}
                 >
-                <div className="-mx-6 lg:rotate-90 flex justify-center">EXPERIENCE</div>
+                  <div className="-mx-6 lg:rotate-90 flex justify-center">EXPERIENCE</div>
                 </button>
 
 
@@ -195,7 +204,7 @@ export const SelectorBuffs = (show) => {
 
                   }}
                 >
-                <div className="-mx-6 lg:rotate-90 flex justify-center">TECHNICAL</div>
+                  <div className="-mx-6 lg:rotate-90 flex justify-center">TECHNICAL</div>
                 </button>
 
 
@@ -279,9 +288,13 @@ const ServiceCard = ({
   segments,
   details,
   showDetails
-}) => (
+}) => {
 
-  <Tilt
+  const dispatch = useDispatch();
+  const { dialogueStep } = useSelector(state => state.dialogues);
+
+
+  return <Tilt
     options={{
       max: 9,
       scale: 1.1,
@@ -472,6 +485,13 @@ const ServiceCard = ({
               } else {
                 show.setDisplay("hide");
                 setToggle(false);
+                dispatch(setPopupPanelsActive(false));
+              }
+
+
+              // move to next dialogue if tutorial
+              if (dialogueStep === 3) {
+                dispatch(setDialogueStep(dialogueStep + 1));
               }
 
             }}
@@ -487,7 +507,7 @@ const ServiceCard = ({
     </motion.div>
 
   </Tilt>
-);
+};
 
 
 

@@ -87,8 +87,6 @@ document.body.prepend(renderer.domElement)
 
 
 
-
-
 sun = new THREE.Vector3();
 
 const controls = new OrbitControls(camera, renderer.domElement)
@@ -315,7 +313,7 @@ const App = () => {
   /////
 
   window.removeEventListener( 'resize', onWindowResize );
-  window.addEventListener( 'resize', onWindowResize );
+  window.addEventListener('resize', onWindowResize );
 
 
   // draw objects and map every frame
@@ -359,17 +357,15 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className=' relative z-0'>
-        <div className="">
-
-        </div>
+      <div className='relative z-0'>
         <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           
           <Navbar />
-          <AnalogStick />
-          <UpgradesBar />
-          <ContestBar />
+          {/* <AnalogStick /> */}
+          {/* <UpgradesBar /> */}
+          {/* <ContestBar /> */}
           <Dialogues />
+          
         </div>
 
         {/* scroll by page draft, trying to imitate crossfade website */}
@@ -388,9 +384,9 @@ const App = () => {
         </div> */}
 
 
-        <Hero />
+        {/* <Hero />
         <Tech />
-        <Experience />
+        <Experience /> */}
       </div>
     </BrowserRouter>
   )
