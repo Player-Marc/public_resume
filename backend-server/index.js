@@ -134,10 +134,11 @@ async function main() {
     // player spawn
     players.push({
       id: socket.id,
+      spawned: false,
       loaded: false,
       type: "player",
-      x: Math.floor(Math.random() * 400),
-      y: Math.floor(Math.random() * 400),
+      x: Math.floor(Math.random() * 5),
+      y: Math.floor(Math.random() * 5),
       score: 0,
       health: 2,
       healthRecharge: 2,
@@ -265,7 +266,7 @@ function tick(delta) {
 
   io.emit("players", players);
 
-  io.emit("snowballs", snowball.alive(snowballs));
+  io.emit("projectiles", snowball.alive(snowballs));
 
   io.emit("enemies", enemy.alive(enemies, delta));
 

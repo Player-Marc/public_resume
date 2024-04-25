@@ -74,7 +74,8 @@ class Snowball {
           origin.snowballStats.rateCooldown = 0;
           snowballCount++;
           snowballs.push({
-            snowballId: origin.id + snowballCount,
+            id: origin.id + snowballCount,
+            health: 1,
             type: origin.type,
             hit: false,
             angle: angle,
@@ -94,7 +95,7 @@ class Snowball {
 
   alive(snowballs) {
     // filter and destroy snowballs that have no more time left
-    return snowballs.filter((snowball) => snowball.timeLeft > 0 && snowball.hit === false);
+    return snowballs = snowballs.filter((snowball) => snowball.timeLeft > 0 && snowball.hit === false);
   }
 
 

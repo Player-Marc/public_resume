@@ -90,7 +90,8 @@ class PlayerMovement {
 
     let buffProgress = {
       player: player.id,
-      value: player.buffRate / player.buffRateCooldown
+      percent: player.buffRate / player.buffRateCooldown,
+      value: player.buffRateCooldown
     };
 
     let skillProgress = {
@@ -124,6 +125,7 @@ class PlayerMovement {
 
       // console.log("[[[ Player: " + player.id + "]]] levels up buff");
 
+      // reset buff rate if it exceeds buffRate
       player.buffRateCooldown = 0;
 
 

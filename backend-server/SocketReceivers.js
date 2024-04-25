@@ -23,7 +23,9 @@ class SocketReceivers {
 
         //// Player Movement
         socket.on("inputs", (inputs) => {
+            
             inputsMap[socket.id] = inputs;
+            //console.log("fe");
         });
 
         socket.on("mute", (isMuted) => {
@@ -36,9 +38,10 @@ class SocketReceivers {
         });
 
         // waiting/listening for snowball emit
-        socket.on("snowball", (angle) => {
+        socket.on("projectile", (angle) => {
 
             snowball.shoot(player, snowballs, angle, skills)
+            console.log("SHOT")
 
             ///// clicksMap[socket.id].clickAngle = angle;
 

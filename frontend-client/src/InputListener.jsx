@@ -82,7 +82,7 @@ export default class InputListener {
                 e.clientY - this.canvasEl.height / 2,
                 e.clientX - this.canvasEl.width / 2
             );
-            this.socket.emit("snowball", angle);
+            this.socket.emit("projectile", angle);
 
         });
     }

@@ -139,32 +139,32 @@ const Navbar = () => {
 
     if (progressGained.player !== socket.id) return;
 
-    if (progressGained.value >= 4.5) {
+    if (progressGained.percent >= 4.5) {
       setBuffProgress("sm:w-[15%]");
       return;
     }
 
-    if (progressGained.value >= 2.4) {
+    if (progressGained.percent >= 2.4) {
       setBuffProgress("sm:w-[30%]");
       return;
     }
 
-    if (progressGained.value >= 1.7) {
+    if (progressGained.percent >= 1.7) {
       setBuffProgress("sm:w-[50%]");
       return;
     }
 
-    if (progressGained.value >= 1.35) {
+    if (progressGained.percent >= 1.35) {
       setBuffProgress("sm:w-[65%]");
       return;
     }
 
-    if (progressGained.value >= 1.05) {
+    if (progressGained.percent >= 1.05) {
       setBuffProgress("sm:w-[82%]");
       return;
     }
 
-    if (progressGained.value >= 0.9) {
+    if (progressGained.percent >= 0.9) {
       setBuffProgress("sm:w-[100%]");
       return;
     }

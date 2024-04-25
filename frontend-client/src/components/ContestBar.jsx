@@ -16,7 +16,7 @@ const ContestBar = () => {
     var contestLeader = "";
 
     
-  const [scrolled, setScrolled] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const [playerList, setPlayerList] = useState([]);
     const [inviters, setInviters] = useState([]);
     const [leader, setLeader] = useState("");

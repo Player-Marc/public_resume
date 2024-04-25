@@ -22,7 +22,7 @@ export default class Snowball {
 
       for (const loadedSnowball of loadedSnowballs) {
 
-        if (loadedSnowball.modelId === snowball.snowballId) {
+        if (loadedSnowball.modelId === snowball.id) {
 
           loadedSnowball.position.x = snowball.x;
           loadedSnowball.position.z = snowball.y;

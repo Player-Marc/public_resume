@@ -94,9 +94,9 @@ export default class SocketReceiver {
 
     assignSnowballs(scene, loadedSnowballs) {
 
-        socket.off("snowballs");
+        socket.off("projectiles");
 
-        socket.on("snowballs", (serverSnowballs) => {
+        socket.on("projectiles", (serverSnowballs) => {
 
             snowballs = serverSnowballs;
 
@@ -110,7 +110,7 @@ export default class SocketReceiver {
 
                 for (const loadedSnowball of loadedSnowballs) {
 
-                    if (snowball.snowballId === loadedSnowball.modelId) {
+                    if (snowball.id === loadedSnowball.modelId) {
                         snowballModelSpawned = true;
 
 
@@ -139,8 +139,8 @@ export default class SocketReceiver {
                     }
 
 
-                    snowballCube.modelId = snowball.snowballId;
-                    snowballCube.name = snowball.snowballId;
+                    snowballCube.modelId = snowball.id;
+                    snowballCube.name = snowball.id;
 
                     loadedSnowballs.push(snowballCube);
 
@@ -171,8 +171,7 @@ export default class SocketReceiver {
 
                 for (const snowball of snowballs) {
 
-                    if (loadedSnowball.modelId === snowball.snowballId) {
-
+                    if (loadedSnowball.modelId === snowball.id){
                         missing = false;
                         break;
 
