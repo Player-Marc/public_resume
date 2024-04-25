@@ -16,13 +16,13 @@ import io from 'socket.io-client'
 
 
 // Render
-// const socket = io.connect("https://tresum.onrender.com");
+const socket = io.connect("https://tresum.onrender.com");
 
 // FL0
 // const socket = io.connect("https://gympie-wombat-xerc.1.sg-1.fl0.io");
 
 // Local
-const socket = io.connect("http://localhost:3000");
+// const socket = io.connect("http://localhost:3000");
 
 export default class SocketReceiver {
 

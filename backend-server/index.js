@@ -46,8 +46,10 @@ httpServer.listen(3000);
 const io = new Server(httpServer,
   {
     cors: {
-      // origin: 'https://explore-quest.netlify.app',
-      origin: "http://localhost:5173",
+
+      // Uncomment this when building/deploying to Frontend: Netlify. For backend: Render, FL0. change socket variable in frontend-client/src/SocketReceiver.jsx
+      origin: 'https://explore-quest.netlify.app',
+      // origin: "http://localhost:5173",
       methods: ['GET', 'POST']
     }
   });
